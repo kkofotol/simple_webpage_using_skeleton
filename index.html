@@ -174,65 +174,104 @@
     <polygon points="20,20 80,30 60,70 10,60" class="shape shape-4" />
   </svg>
 </div>
-.svg-background {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: 0.5;
-}
+ Βασικές Ρυθμίσεις -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVG Background Example</title>
 
-.svg-background svg {
-  width: 100%;
-  height: 100%;
-}
+  <!-- CSS -->
+  <style>
+    /* Στυλ για το SVG φόντο */
+    .svg-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0.5;
+    }
 
-/* Χρώματα για κάθε σχήμα στο light mode */
-body.light-mode .shape-1 { fill: rgba(200, 220, 230, 0.5); }
-body.light-mode .shape-2 { fill: rgba(220, 220, 220, 0.5); }
-body.light-mode .shape-3 { fill: rgba(150, 200, 240, 0.4); }
-body.light-mode .shape-4 { fill: rgba(190, 190, 190, 0.3); }
+    .svg-background svg {
+      width: 100%;
+      height: 100%;
+    }
 
-/* Χρώματα για dark mode */
-body.dark-mode .shape-1 { fill: rgba(40, 0, 80, 0.6); }
-body.dark-mode .shape-2 { fill: rgba(20, 0, 40, 0.6); }
-body.dark-mode .shape-3 { fill: rgba(80, 0, 120, 0.5); }
-body.dark-mode .shape-4 { fill: rgba(0, 0, 0, 0.5); }
-/* Στυλ για το όνομα */
-#student_info h3 {
-  text-align: center;
-  padding: 1rem;
-  border-radius: 15px;
-  font-weight: 600;
-  background-color: rgba(173, 216, 230, 0.4); /* default light */
-  transition: background 0.5s ease;
-}
+    /* Χρώματα για κάθε σχήμα στο light mode */
+    body.light-mode .shape-1 { fill: rgba(200, 220, 230, 0.5); }
+    body.light-mode .shape-2 { fill: rgba(220, 220, 220, 0.5); }
+    body.light-mode .shape-3 { fill: rgba(150, 200, 240, 0.4); }
+    body.light-mode .shape-4 { fill: rgba(190, 190, 190, 0.3); }
 
-/* Σκοτεινή λειτουργία για το πλαίσιο */
-body.dark-mode #student_info h3 {
-  background-color: rgba(128, 0, 128, 0.4); /* purple */
-  color: #fff;
-}
+    /* Χρώματα για dark mode */
+    body.dark-mode .shape-1 { fill: rgba(40, 0, 80, 0.6); }
+    body.dark-mode .shape-2 { fill: rgba(20, 0, 40, 0.6); }
+    body.dark-mode .shape-3 { fill: rgba(80, 0, 120, 0.5); }
+    body.dark-mode .shape-4 { fill: rgba(0, 0, 0, 0.5); }
 
-/* Ενισχυμένα layers φόντου */
-body.light-mode::before {
-  background:
-    linear-gradient(25deg, rgba(173, 216, 230, 0.45) 0%, transparent 60%) 0 0 / 60% 60% no-repeat,
-    linear-gradient(135deg, rgba(211, 211, 211, 0.4) 0%, transparent 70%) 20% 30% / 80% 70% no-repeat,
-    linear-gradient(65deg, rgba(180, 220, 255, 0.4) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
-    linear-gradient(-45deg, rgba(240, 240, 240, 0.5) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
-}
+    /* Στυλ για το όνομα */
+    #student_info h3 {
+      text-align: center;
+      padding: 1rem;
+      border-radius: 15px;
+      font-weight: 600;
+      background-color: rgba(173, 216, 230, 0.4);
+      transition: background 0.5s ease;
+    }
 
-body.dark-mode::before {
-  background:
-    linear-gradient(25deg, rgba(90, 0, 120, 0.5) 0%, transparent 60%) 0 0 / 70% 60% no-repeat,
-    linear-gradient(135deg, rgba(40, 0, 40, 0.5) 0%, transparent 70%) 30% 40% / 90% 50% no-repeat,
-    linear-gradient(65deg, rgba(110, 0, 160, 0.5) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
-    linear-gradient(-45deg, rgba(30, 0, 60, 0.6) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
-}
+    /* Σκοτεινή λειτουργία για το πλαίσιο */
+    body.dark-mode #student_info h3 {
+      background-color: rgba(128, 0, 128, 0.4);
+      color: #fff;
+    }
 
+    /* Ενισχυμένα layers φόντου */
+    body.light-mode::before {
+      background:
+        linear-gradient(25deg, rgba(173, 216, 230, 0.45) 0%, transparent 60%) 0 0 / 60% 60% no-repeat,
+        linear-gradient(135deg, rgba(211, 211, 211, 0.4) 0%, transparent 70%) 20% 30% / 80% 70% no-repeat,
+        linear-gradient(65deg, rgba(180, 220, 255, 0.4) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
+        linear-gradient(-45deg, rgba(240, 240, 240, 0.5) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
+    }
+
+    body.dark-mode::before {
+      background:
+        linear-gradient(25deg, rgba(90, 0, 120, 0.5) 0%, transparent 60%) 0 0 / 70% 60% no-repeat,
+        linear-gradient(135deg, rgba(40, 0, 40, 0.5) 0%, transparent 70%) 30% 40% / 90% 50% no-repeat,
+        linear-gradient(65deg, rgba(110, 0, 160, 0.5) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
+        linear-gradient(-45deg, rgba(30, 0, 60, 0.6) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
+    }
+  </style>
+
+</head>
+<body class="light-mode">
+
+  <!-- Background SVG -->
+  <div class="svg-background">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <circle class="shape-1" cx="20" cy="20" r="15"></circle>
+      <rect class="shape-2" x="60" y="10" width="30" height="30"></rect>
+      <polygon class="shape-3" points="50,5 90,40 10,40"></polygon>
+      <ellipse class="shape-4" cx="50" cy="80" rx="25" ry="10"></ellipse>
+    </svg>
+  </div>
+
+  <!-- Πληροφορίες Φοιτητή -->
+  <div id="student_info">
+    <h3>Konstantinos Kofotolis</h3>
+  </div>
+
+  <!-- Κουμπί Εναλλαγής Θέματος -->
+  <button id="toggle-mode">Toggle Mode</button>
+
+  <script>
+    document.getElementById("toggle-mode").addEventListener("click", function() {
+      document.body.classList.toggle("light-mode");
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+
+</body>
 </html>
 
