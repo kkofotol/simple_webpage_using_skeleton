@@ -1,116 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Your Website Title</title>
+  <!-- Basic Page Needs–– -->
+  <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Your Website Title</title>
 
-  <!-- Skeleton CSS -->
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/customize.css">
 
   <style>
-    /* =============== Βασικό Στυλ =============== */
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      transition: background 0.6s ease, color 0.6s ease;
-      position: relative;
-      overflow-x: hidden;
+      font-family: 'Raleway', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    /* ================= Layered Background ================ */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -2;
-      pointer-events: none;
-      background-repeat: no-repeat;
-      background-blend-mode: overlay;
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    #info, #projects {
+      margin-bottom: 40px;
+    }
+
+    .row {
+      margin: 20px 0;
+    }
+
+    h2, h3, h5 {
+      text-align: center;
+      margin: 10px;
+    }
+
+    /* Dark and Light Mode Toggle */
+    #mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
 
     /* Light Mode */
     body.light-mode {
-      color: #111;
-      background-color: #f8f8f8;
+      background-color: #f4f4f4;
+      color: #333;
     }
 
-    body.light-mode::before {
-      background:
-        linear-gradient(25deg, rgba(173, 216, 230, 0.2) 0%, transparent 60%) 0 0 / 60% 60% no-repeat,
-        linear-gradient(135deg, rgba(211, 211, 211, 0.3) 0%, transparent 70%) 20% 30% / 80% 70% no-repeat,
-        linear-gradient(65deg, rgba(180, 220, 255, 0.25) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
-        linear-gradient(-45deg, rgba(240, 240, 240, 0.4) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
+    body.light-mode h2, body.light-mode h3, body.light-mode h5 {
+      color: #333;
     }
 
     /* Dark Mode */
     body.dark-mode {
+      background-color: #333;
       color: #fff;
-      background-color: #000;
     }
 
-    body.dark-mode::before {
-      background:
-        linear-gradient(25deg, rgba(90, 0, 90, 0.3) 0%, transparent 60%) 0 0 / 70% 60% no-repeat,
-        linear-gradient(135deg, rgba(20, 20, 20, 0.4) 0%, transparent 70%) 30% 40% / 90% 50% no-repeat,
-        linear-gradient(65deg, rgba(110, 0, 160, 0.3) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
-        linear-gradient(-45deg, rgba(10, 10, 10, 0.5) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
+    body.dark-mode h2, body.dark-mode h3, body.dark-mode h5 {
+      color: #fff;
     }
 
-    /* ============= Εικόνες ============ */
-    #projects img {
-      border-radius: 8px;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      width: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Hover Effects on Images */
+    .scale-with-grid {
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    #projects img:hover {
+    .scale-with-grid:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* ============ Light/Dark Button =========== */
-    #modeToggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: 2px solid currentColor;
-      border-radius: 30px;
-      padding: 0.5em 1em;
-      font-size: 0.9rem;
-      cursor: pointer;
-      z-index: 10;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    body.light-mode #modeToggle {
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #111;
-    }
-
-    body.dark-mode #modeToggle {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
+    /* Container for Light and Dark Mode toggle */
+    .toggle-button {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
     }
   </style>
 </head>
-<body>
 
-  <button id="modeToggle">🌙 Toggle Mode</button>
+<body class="light-mode">
+
+  <!-- Dark/Light Mode Toggle Button -->
+  <div id="mode-toggle" class="toggle-button">Dark Mode</div>
 
   <div id="info" class="container">
     <div id="course_info" class="row one-top">
-      <h2>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences </h2>
+      <h2>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences</h2>
     </div>
 
     <div id="student_info" class="row half-bottom">
@@ -153,121 +140,31 @@
     </div>
   </div>
 
+  <!-- JS to toggle dark/light mode -->
   <script>
-    const toggle = document.getElementById("modeToggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      document.body.classList.toggle("light-mode");
-    });
+    const toggleButton = document.getElementById('mode-toggle');
+    const body = document.body;
 
-    // Default Mode
-    document.body.classList.add("light-mode");
-  </script>
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
 
-</body>
+      // Change text depending on mode
+      if (body.classList.contains('light-mode')) {
+        toggleButton.textContent = 'Dark Mode';
+      } else {
+        toggleButton.textContent = 'Light Mode';
+      }
 
-  <div class="svg-background" aria-hidden="true">
-  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-    <polygon points="0,0 100,10 80,100 0,90" class="shape shape-1" />
-    <polygon points="50,0 100,20 100,80 70,100" class="shape shape-2" />
-    <polygon points="0,40 30,60 10,100 0,100" class="shape shape-3" />
-    <polygon points="20,20 80,30 60,70 10,60" class="shape shape-4" />
-  </svg>
-</div>
+      // Fade effect
+      body.style.transition = 'opacity 0.3s';
+      body.style.opacity = 0;
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SVG Background Example</title>
-
-  <!-- CSS -->
-  <style>
-    /* Στυλ για το SVG φόντο */
-    .svg-background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-      opacity: 0.5;
-    }
-
-    .svg-background svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Χρώματα για κάθε σχήμα στο light mode */
-    body.light-mode .shape-1 { fill: rgba(200, 220, 230, 0.5); }
-    body.light-mode .shape-2 { fill: rgba(220, 220, 220, 0.5); }
-    body.light-mode .shape-3 { fill: rgba(150, 200, 240, 0.4); }
-    body.light-mode .shape-4 { fill: rgba(190, 190, 190, 0.3); }
-
-    /* Χρώματα για dark mode */
-    body.dark-mode .shape-1 { fill: rgba(40, 0, 80, 0.6); }
-    body.dark-mode .shape-2 { fill: rgba(20, 0, 40, 0.6); }
-    body.dark-mode .shape-3 { fill: rgba(80, 0, 120, 0.5); }
-    body.dark-mode .shape-4 { fill: rgba(0, 0, 0, 0.5); }
-
-    /* Στυλ για το όνομα */
-    #student_info h3 {
-      text-align: center;
-      padding: 1rem;
-      border-radius: 15px;
-      font-weight: 600;
-      background-color: rgba(173, 216, 230, 0.4);
-      transition: background 0.5s ease;
-    }
-
-    /* Σκοτεινή λειτουργία για το πλαίσιο */
-    body.dark-mode #student_info h3 {
-      background-color: rgba(128, 0, 128, 0.4);
-      color: #fff;
-    }
-
-    /* Ενισχυμένα layers φόντου */
-    body.light-mode::before {
-      background:
-        linear-gradient(25deg, rgba(173, 216, 230, 0.45) 0%, transparent 60%) 0 0 / 60% 60% no-repeat,
-        linear-gradient(135deg, rgba(211, 211, 211, 0.4) 0%, transparent 70%) 20% 30% / 80% 70% no-repeat,
-        linear-gradient(65deg, rgba(180, 220, 255, 0.4) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
-        linear-gradient(-45deg, rgba(240, 240, 240, 0.5) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
-    }
-
-    body.dark-mode::before {
-      background:
-        linear-gradient(25deg, rgba(90, 0, 120, 0.5) 0%, transparent 60%) 0 0 / 70% 60% no-repeat,
-        linear-gradient(135deg, rgba(40, 0, 40, 0.5) 0%, transparent 70%) 30% 40% / 90% 50% no-repeat,
-        linear-gradient(65deg, rgba(110, 0, 160, 0.5) 0%, transparent 60%) 60% 10% / 50% 80% no-repeat,
-        linear-gradient(-45deg, rgba(30, 0, 60, 0.6) 0%, transparent 60%) 10% 60% / 60% 40% no-repeat;
-    }
-  </style>
-
-</head>
-<body class="light-mode">
-
-  <!-- Background SVG -->
-  <div class="svg-background">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <circle class="shape-1" cx="20" cy="20" r="15"></circle>
-      <rect class="shape-2" x="60" y="10" width="30" height="30"></rect>
-      <polygon class="shape-3" points="50,5 90,40 10,40"></polygon>
-      <ellipse class="shape-4" cx="50" cy="80" rx="25" ry="10"></ellipse>
-    </svg>
-  </div>
-
-
-
-
-
-  <script>
-    document.getElementById("light-mode").addEventListener("click", function() {
-      document.body.classList.toggle("light-mode");
-      document.body.classList.toggle("dark-mode");
+      setTimeout(() => {
+        body.style.opacity = 1;
+      }, 300);
     });
   </script>
 
 </body>
 </html>
-
