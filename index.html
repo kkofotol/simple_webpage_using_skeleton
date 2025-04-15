@@ -2,133 +2,76 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs–– -->
+  <!-- Βασικές Πληροφορίες -->
   <meta charset="utf-8"> 
-
   <title>Your Website Title</title>
 
   <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Νέα Γραμματοσειρά -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/customize.css">
 
-  <style>
-    :root {
-      --light-bg: repeating-linear-gradient(135deg, #ffffff, #ffffff 20px, #eaeaea 20px, #eaeaea 40px);
-      --light-text: #111;
-      --dark-bg: repeating-linear-gradient(135deg, #1a1a1a, #1a1a1a 20px, #2e003e 20px, #2e003e 40px);
-      --dark-text: #fff;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light-bg);
-      color: var(--light-text);
-      transition: background 0.4s, color 0.4s;
-    }
-
-    body.dark-mode {
-      background: var(--dark-bg);
-      color: var(--dark-text);
-    }
-
-    .scale-with-grid {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .scale-with-grid:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    #mode-toggle {
-      position: fixed;
-      top: 15px;
-      right: 20px;
-      background: transparent;
-      border: 2px solid currentColor;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    #mode-toggle:hover {
-      background: rgba(0,0,0,0.05);
-    }
-  </style>
 </head>
 <body>
 
-  <button id="mode-toggle">🌙 Dark Mode</button>
+  <!-- Κουμπί Light/Dark Mode -->
+  <button id="toggle-mode" class="toggle-mode">Toggle Mode</button>
 
-  <div id="info" class="container" >
+  <div id="info" class="container">
 
-    <div id="course_info" class="row one-top" >
-      <h2>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences </h2>
+    <div id="course_info" class="row one-top">
+      <h2>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences</h2>
     </div>
 
-    <div id="student_info" class="row half-bottom" >
+    <div id="student_info" class="row half-bottom">
       <h3>Konstantinos Kofotolis</h3> 
-      <p>I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like traveling, music and photography. Have a look at my projects.</p> 
+      <p>I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like traveling, music, and photography. Have a look at my projects.</p> 
     </div>
 
   </div>
 
-  <div id="projects" class="container" >
+  <div id="projects" class="container">
 
     <h3 class="half-bottom">Projects</h3>
 
     <div class="row half-bottom">
       <div class="four columns">
-        <img src="images/blue.png" class ="scale-with-grid">
+        <img src="images/blue.png" class="project-image">
         <h5>Blue Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/pink.png" class ="scale-with-grid">
+        <img src="images/pink.png" class="project-image">
         <h5>Pink Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/yellow.png" class ="scale-with-grid">
+        <img src="images/yellow.png" class="project-image">
         <h5>Yellow Project</h5>
       </div>
     </div>
 
     <div class="row one-bottom">
       <div class="four columns">
-        <img src="images/red.png" class ="scale-with-grid">
+        <img src="images/red.png" class="project-image">
         <h5>Red Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/brown.png" class ="scale-with-grid">
+        <img src="images/brown.png" class="project-image">
         <h5>Brown Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/green.png" class ="scale-with-grid">
+        <img src="images/green.png" class="project-image">
         <h5>Green Project</h5>
       </div>
     </div>
 
   </div>
 
-  <script>
-    const toggleBtn = document.getElementById('mode-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
-    });
-  </script>
-
+  <script src="js/theme-toggle.js"></script>
 </body>
 </html>
