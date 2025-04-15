@@ -1,123 +1,134 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+
+  <!-- Basic Page Needs–– -->
+  <meta charset="utf-8"> 
+
+  <title>Your Website Title</title>
+
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Τα Projects μου</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
   <style>
+    :root {
+      --light-bg: repeating-linear-gradient(135deg, #ffffff, #ffffff 20px, #eaeaea 20px, #eaeaea 40px);
+      --light-text: #111;
+      --dark-bg: repeating-linear-gradient(135deg, #1a1a1a, #1a1a1a 20px, #2e003e 20px, #2e003e 40px);
+      --dark-text: #fff;
+    }
+
     body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      background: var(--light-bg);
+      color: var(--light-text);
+      transition: background 0.4s, color 0.4s;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 60px;
+    body.dark-mode {
+      background: var(--dark-bg);
+      color: var(--dark-text);
     }
 
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 10px;
+    .scale-with-grid {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .nav {
-      margin-top: 10px;
+    .scale-with-grid:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
-    .nav a {
-      margin: 0 10px;
-      color: #007BFF;
-      text-decoration: none;
+    #mode-toggle {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: transparent;
+      border: 2px solid currentColor;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
     }
 
-    .project-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-title {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .project-desc {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      color: #999;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
+    #mode-toggle:hover {
+      background: rgba(0,0,0,0.05);
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Κωνσταντίνος Κ.</h1>
-    <div class="nav">
-      <a href="#about">Σχετικά</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Επικοινωνία</a>
+  <button id="mode-toggle">🌙 Dark Mode</button>
+
+  <div id="info" class="container" >
+
+    <div id="course_info" class="row one-top" >
+      <h2>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences </h2>
     </div>
-  </header>
 
-  <section id="about">
-    <h2 class="section-title">👨‍💻 Σχετικά με Εμένα</h2>
-    <p class="container">
-      Είμαι φοιτητής Πληροφορικής με πάθος για τον προγραμματισμό και τον σχεδιασμό απλών αλλά λειτουργικών ιστοσελίδων.
-    </p>
-  </section>
+    <div id="student_info" class="row half-bottom" >
+      <h3>Konstantinos Kofotolis</h3> 
+      <p>I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like traveling, music and photography. Have a look at my projects.</p> 
+    </div>
 
-  <section id="projects">
-    <h2 class="section-title">🛠 Projects</h2>
-    <div class="row">
-      <div class="one-third column">
-        <div class="project-card">
-          <div class="project-title">Project 1</div>
-          <div class="project-desc">Μια απλή εφαρμογή To-Do που υλοποιεί CRUD λειτουργίες.</div>
-        </div>
+  </div>
+
+  <div id="projects" class="container" >
+
+    <h3 class="half-bottom">Projects</h3>
+
+    <div class="row half-bottom">
+      <div class="four columns">
+        <img src="images/blue.png" class ="scale-with-grid">
+        <h5>Blue Project</h5>
       </div>
-      <div class="one-third column">
-        <div class="project-card">
-          <div class="project-title">Project 2</div>
-          <div class="project-desc">Ιστοσελίδα portfolio με responsive σχεδίαση και animation.</div>
-        </div>
+      <div class="four columns">
+        <img src="images/pink.png" class ="scale-with-grid">
+        <h5>Pink Project</h5>
       </div>
-      <div class="one-third column">
-        <div class="project-card">
-          <div class="project-title">Project 3</div>
-          <div class="project-desc">Mini-game σε JavaScript με σκορ και εφέ κίνησης.</div>
-        </div>
+      <div class="four columns">
+        <img src="images/yellow.png" class ="scale-with-grid">
+        <h5>Yellow Project</h5>
       </div>
     </div>
-  </section>
 
-  <footer id="contact">
-    <p>📧 Επικοινωνία: <a href="mailto:example@mail.com">example@mail.com</a></p>
-    <p>🔗 <a href="https://github.com/kkofotol" target="_blank">GitHub</a></p>
-  </footer>
+    <div class="row one-bottom">
+      <div class="four columns">
+        <img src="images/red.png" class ="scale-with-grid">
+        <h5>Red Project</h5>
+      </div>
+      <div class="four columns">
+        <img src="images/brown.png" class ="scale-with-grid">
+        <h5>Brown Project</h5>
+      </div>
+      <div class="four columns">
+        <img src="images/green.png" class ="scale-with-grid">
+        <h5>Green Project</h5>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
 
 </body>
 </html>
