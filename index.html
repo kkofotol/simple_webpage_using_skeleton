@@ -59,18 +59,6 @@
       background-color: #5a2c74; /* Σκούρο μωβ */
       color: white;
     }
-
-    /* Στυλ για τις εικόνες */
-    .scale-with-grid {
-      width: 100%;
-      height: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .scale-with-grid:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    }
   </style>
 
 </head>
@@ -80,7 +68,6 @@
   <button id="toggle-mode" class="toggle-mode">Toggle Mode</button>
 
   <div id="info" class="container">
-
     <div id="course_info" class="row one-top">
       <h2><strong>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences</strong></h2>
     </div>
@@ -89,40 +76,15 @@
       <h3 class="name-box">Konstantinos Kofotolis</h3>
       <p>I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like traveling, music, and photography. Have a look at my projects.</p>
     </div>
-
-  </div>
-
-  <div id="projects" class="container">
-    <h3 class="half-bottom">Projects</h3>
-    
-    <div class="row half-bottom">
-      <div class="four columns"><img src="images/blue.png" class="scale-with-grid"><h5>Blue Project</h5></div>
-      <div class="four columns"><img src="images/pink.png" class="scale-with-grid"><h5>Pink Project</h5></div>
-      <div class="four columns"><img src="images/yellow.png" class="scale-with-grid"><h5>Yellow Project</h5></div>
-    </div>
-
-    <div class="row one-bottom">
-      <div class="four columns"><img src="images/red.png" class="scale-with-grid"><h5>Red Project</h5></div>
-      <div class="four columns"><img src="images/brown.png" class="scale-with-grid"><h5>Brown Project</h5></div>
-      <div class="four columns"><img src="images/green.png" class="scale-with-grid"><h5>Green Project</h5></div>
-    </div>
-
-    <div class="row one-bottom center"><p>©Dimitris Papanikolaou 2025</p></div>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const toggleButton = document.getElementById("toggle-mode");
-
-      // Ορισμός αρχικού θέματος
-      document.body.classList.add("light-mode");
-
-      toggleButton.addEventListener("click", function() {
-        document.body.classList.toggle("light-mode");
-        document.body.classList.toggle("dark-mode");
-      });
+    document.getElementById("toggle-mode").addEventListener("click", function() {
+      document.body.classList.toggle("light-mode");
+      document.body.classList.toggle("dark-mode");
     });
   </script>
 
 </body>
 </html>
+
