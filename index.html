@@ -1,136 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Your Website Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f0f0f0;
-      color: #000;
-      transition: all 0.3s ease;
-    }
-
-    h2 {
-      font-weight: 700;
-      font-family: 'Merriweather', serif;
-    }
-
-    #student_info h3 {
-      text-align: center;
-      background-color: #87CEEB; /* light sky blue */
-      padding: 10px;
-      border-radius: 8px;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-
-    .dark-mode {
-      background-color: #000;
-      color: #fff;
-    }
-
-    .dark-mode #student_info h3 {
-      background-color: #6a5acd; /* soft purple */
-    }
-
-    .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      background-color: #333;
-      color: #fff;
-      cursor: pointer;
-      font-size: 14px;
-      z-index: 100;
-    }
-
-    .light-mode #student_info h3 {
-      background-color: #87CEEB;
-    }
-
-    .light-mode {
-      background-color: #f0f0f0;
-      color: #000;
-    }
-  </style>
+    <!-- Basic Page Needs–– -->
+    <meta charset="utf-8">
+    <title>Your Website Title</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/customize.css">
+    
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --name-box-color: #87CEEB;
+            --box-text-color: #000;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #000;
+            --text-color: #fff;
+            --name-box-color: #9370DB;
+            --box-text-color: #fff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        h2, h3, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        h2 {
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .course-title {
+            font-weight: bold;
+        }
+        
+        .name-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .name-box {
+            display: inline-block;
+            background-color: var(--name-box-color);
+            color: var(--box-text-color);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--name-box-color);
+            color: var(--box-text-color);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .student-description {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .projects-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-item h5 {
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--text-color);
+            opacity: 0.7;
+        }
+        
+        img {
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body class="light-mode">
-  <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
-
-  <div id="info" class="container">
-    <div id="course_info" class="row one-top">
-      <h2><strong>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences</strong></h2>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+    
+    <div id="info" class="container">
+        <div id="course_info" class="row one-top">
+            <h2 class="course-title">NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences</h2>
+        </div>
+        
+        <div class="name-container">
+            <div class="name-box">Konstantinos Kofotolis</div>
+        </div>
+        
+        <div id="student_info" class="row half-bottom">
+            <div class="student-description">
+                <p>I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like traveling, music and photography. Have a look at my projects.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="projects" class="container">
+        <h3 class="projects-title half-bottom">Projects</h3>
+        <div class="row half-bottom">
+            <div class="four columns project-item">
+                <img src="images/blue.png" class="scale-with-grid">
+                <h5>Blue Project</h5>
+            </div>
+            <div class="four columns project-item">
+                <img src="images/pink.png" class="scale-with-grid">
+                <h5>Pink Project</h5>
+            </div>
+            <div class="four columns project-item">
+                <img src="images/yellow.png" class="scale-with-grid">
+                <h5>Yellow Project</h5>
+            </div>
+        </div>
+        <div class="row one-bottom">
+            <div class="four columns project-item">
+                <img src="images/red.png" class="scale-with-grid">
+                <h5>Red Project</h5>
+            </div>
+            <div class="four columns project-item">
+                <img src="images/brown.png" class="scale-with-grid">
+                <h5>Brown Project</h5>
+            </div>
+            <div class="four columns project-item">
+                <img src="images/green.png" class="scale-with-grid">
+                <h5>Green Project</h5>
+            </div>
+        </div>
+        <div class="row one-bottom center footer">
+            <p>©Dimitris Papanikolaou 2025</p>
+        </div>
     </div>
 
-    <div id="student_info" class="row half-bottom">
-      <h3>Konstantinos Kofotolis</h3>
-      <p style="text-align:center;">I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like traveling, music and photography. Have a look at my projects.</p>
-    </div>
-  </div>
-
-  <div id="projects" class="container">
-    <h3 class="half-bottom">Projects</h3>
-    <div class="row half-bottom">
-      <div class="four columns">
-        <img src="images/blue.png" class="scale-with-grid">
-        <h5>Blue Project</h5>
-      </div>
-      <div class="four columns">
-        <img src="images/pink.png" class="scale-with-grid">
-        <h5>Pink Project</h5>
-      </div>
-      <div class="four columns">
-        <img src="images/yellow.png" class="scale-with-grid">
-        <h5>Yellow Project</h5>
-      </div>
-    </div>
-
-    <div class="row one-bottom">
-      <div class="four columns">
-        <img src="images/red.png" class="scale-with-grid">
-        <h5>Red Project</h5>
-      </div>
-      <div class="four columns">
-        <img src="images/brown.png" class="scale-with-grid">
-        <h5>Brown Project</h5>
-      </div>
-      <div class="four columns">
-        <img src="images/green.png" class="scale-with-grid">
-        <h5>Green Project</h5>
-      </div>
-    </div>
-
-    <div class="row one-bottom center">
-      <p>©Dimitris Papanikolaou 2025</p>
-    </div>
-  </div>
-
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const button = document.querySelector('.theme-toggle');
-      body.classList.toggle('dark-mode');
-      body.classList.toggle('light-mode');
-      if (body.classList.contains('dark-mode')) {
-        button.textContent = "Light Mode";
-      } else {
-        button.textContent = "Dark Mode";
-      }
-    }
-  </script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                button.innerHTML = '🌙 Dark Mode';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                button.innerHTML = '☀️ Light Mode';
+            }
+        }
+        
+        // Check for saved theme preference or default to light mode
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            document.querySelector('.theme-toggle').innerHTML = '☀️ Light Mode';
+        }
+        
+        // Save theme preference
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const theme = document.body.getAttribute('data-theme');
+            localStorage.setItem('theme', theme || 'light');
+        });
+    </script>
 </body>
 </html>
 
