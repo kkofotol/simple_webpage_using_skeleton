@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- Basic Page Needs–– -->
   <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Your Website Title</title>
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
@@ -15,156 +18,67 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/customize.css">
 
-  <style>
-    body {
-      font-family: 'Raleway', sans-serif;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    #info, #projects {
-      margin-bottom: 40px;
-    }
-
-    .row {
-      margin: 20px 0;
-    }
-
-    h2, h3, h5 {
-      text-align: center;
-      margin: 10px;
-    }
-
-    /* Dark and Light Mode Toggle */
-    #mode-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    /* Light Mode */
-    body.light-mode {
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    body.light-mode h2, body.light-mode h3, body.light-mode h5 {
-      color: #333;
-    }
-
-    /* Dark Mode */
-    body.dark-mode {
-      background-color: #333;
-      color: #fff;
-    }
-
-    body.dark-mode h2, body.dark-mode h3, body.dark-mode h5 {
-      color: #fff;
-    }
-
-    /* Hover Effects on Images */
-    .scale-with-grid {
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .scale-with-grid:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Container for Light and Dark Mode toggle */
-    .toggle-button {
-      text-align: center;
-      font-size: 16px;
-      font-weight: 600;
-    }
-  </style>
 </head>
+<body>
 
-<body class="light-mode">
+  <div id="info" class="container" >
 
-  <!-- Dark/Light Mode Toggle Button -->
-  <div id="mode-toggle" class="toggle-button">Dark Mode</div>
-
-  <div id="info" class="container">
-    <div id="course_info" class="row one-top">
-      <h2>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences</h2>
+    <div id="course_info" class="row one-top" >
+      <h2>NTUA ARCH 4342 Computational Methods in Creative Arts and Sciences </h2>
     </div>
 
-    <div id="student_info" class="row half-bottom">
-      <h3>Konstantinos Kofotolis</h3>
-      <p>I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like traveling, music and photography. Have a look at my projects.</p>
+    <div id="student_info" class="row half-bottom" >
+      <h3>Dimitris Papanikolaou</h3>
+      <p>I am a 1st year undergrad student at NTUA School of Architecture. This is my website for ARCH 4342 Computational Methods in Creative Arts and Sciences. I like to do X, Y, Z. Have a look at my projects. </p>
     </div>
+
   </div>
 
-  <div id="projects" class="container">
+
+
+  <div id="projects" class="container" >
+
     <h3 class="half-bottom">Projects</h3>
 
     <div class="row half-bottom">
       <div class="four columns">
-        <img src="images/blue.png" class="scale-with-grid">
+        <img src="images/blue.png" class ="scale-with-grid">
         <h5>Blue Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/pink.png" class="scale-with-grid">
+        <img src="images/pink.png" class ="scale-with-grid">
         <h5>Pink Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/yellow.png" class="scale-with-grid">
+        <img src="images/yellow.png" class ="scale-with-grid">
         <h5>Yellow Project</h5>
       </div>
     </div>
 
     <div class="row one-bottom">
       <div class="four columns">
-        <img src="images/red.png" class="scale-with-grid">
+        <img src="images/red.png" class ="scale-with-grid">
         <h5>Red Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/brown.png" class="scale-with-grid">
+        <img src="images/brown.png" class ="scale-with-grid">
         <h5>Brown Project</h5>
       </div>
       <div class="four columns">
-        <img src="images/green.png" class="scale-with-grid">
+        <img src="images/green.png" class ="scale-with-grid">
         <h5>Green Project</h5>
       </div>
     </div>
+
+
+    <div class="row one-bottom center">
+      <p>©Dimitris Papanikolaou 2025</p>
+    </div>
+
+
+
   </div>
 
-  <!-- JS to toggle dark/light mode -->
-  <script>
-    const toggleButton = document.getElementById('mode-toggle');
-    const body = document.body;
-
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      body.classList.toggle('light-mode');
-
-      // Change text depending on mode
-      if (body.classList.contains('light-mode')) {
-        toggleButton.textContent = 'Dark Mode';
-      } else {
-        toggleButton.textContent = 'Light Mode';
-      }
-
-      // Fade effect
-      body.style.transition = 'opacity 0.3s';
-      body.style.opacity = 0;
-
-      setTimeout(() => {
-        body.style.opacity = 1;
-      }, 300);
-    });
-  </script>
 
 </body>
 </html>
