@@ -118,6 +118,7 @@
         img {
             border-radius: 8px;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         
         img:hover {
@@ -148,39 +149,39 @@
         <h3 class="projects-title half-bottom">Projects:</h3>
         <div class="row half-bottom">
             <div class="four columns project-item">
-                <img src="images/blue.png" class="scale-with-grid">
+                <img src="images/blue.png" class="scale-with-grid" onclick="openProject('https://drive.google.com/file/d/14Qe91r1kv8oUQwg1FyXDfKM_rzv3Ox8z/view?usp=sharing')">
                 <h5>Tic Tac Toe</h5>
             </div>
             <div class="four columns project-item">
-                <img src="images/pink.png" class="scale-with-grid">
+                <img src="images/pink.png" class="scale-with-grid" onclick="openProject('https://editor.p5js.org/kkofotol/sketches/GjNAVWXE9')">
                 <h5>Shapes</h5>
             </div>
             <div class="four columns project-item">
-                <img src="images/yellow.png" class="scale-with-grid">
+                <img src="images/yellow.png" class="scale-with-grid" onclick="openProject('https://editor.p5js.org/kkofotol/sketches/L5LaRsHEm')">
                 <h5>Color Bubbles</h5>
             </div>
         </div>
         <div class="row one-bottom">
             <div class="four columns project-item">
-                <img src="images/red.png" class="scale-with-grid">
+                <img src="images/red.png" class="scale-with-grid" onclick="openProject('https://editor.p5js.org/kkofotol/sketches/oMS3pk4Ej')">
                 <h5>Color Lines</h5>
             </div>
             <div class="four columns project-item">
-                <img src="images/brown.png" class="scale-with-grid">
+                <img src="images/brown.png" class="scale-with-grid" onclick="openProject('https://editor.p5js.org/kkofotol/sketches/8A25W2rFV')">
                 <h5>LeWitt's Stars</h5>
             </div>
             <div class="four columns project-item">
-                <img src="images/green.png" class="scale-with-grid">
+                <img src="images/green.png" class="scale-with-grid" onclick="openProject('https://editor.p5js.org/kkofotol/sketches/q5fc3FOXv')">
                 <h5>Green Mosaic</h5>
             </div>
         </div>
         <div class="row one-bottom" style="display: flex; justify-content: center;">
             <div class="four columns project-item">
-                <img src="images/purple.png" class="scale-with-grid">
+                <img src="images/purple.png" class="scale-with-grid" onclick="openProject('https://editor.p5js.org/kkofotol/sketches/MEWEGJfic')">
                 <h5>Bubble Fractal</h5>
             </div>
             <div class="four columns project-item">
-                <img src="images/orange.png" class="scale-with-grid">
+                <img src="images/orange.png" class="scale-with-grid" onclick="openProject('https://editor.p5js.org/kkofotol/sketches/ZirRQvHl_')">
                 <h5>Snake Game</h5>
             </div>
         </div>
@@ -203,6 +204,10 @@
             }
         }
         
+        function openProject(url) {
+            window.open(url, '_blank');
+        }
+        
         // Check for saved theme preference or default to light mode
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
@@ -218,4 +223,3 @@
     </script>
 </body>
 </html>
-
